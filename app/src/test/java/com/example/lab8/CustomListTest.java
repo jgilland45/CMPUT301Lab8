@@ -55,6 +55,14 @@ public class CustomListTest {
         assertFalse(list.hasCity(city2));
     }
 
+
+    /**
+     * get if list deleted a given city
+     * add a new city to the list
+     * delete that city from the list
+     * that city should not be in the list
+     * should throw exception if try to delete city again
+     */
     @Test
     void testDeleteCity() {
         list = MockCityList();
@@ -67,14 +75,23 @@ public class CustomListTest {
         });
     }
 
-//    @Test
-//    void testCountCities() {
-//        CityList cityList = mockCityList();
-//        assertEquals(1, cityList.countCities());
-//        City city = new City("Calgary", "Alberta");
-//        cityList.add(city);
-//        assertEquals(2, cityList.countCities());
-//        cityList.delete(city);
-//        assertEquals(1, cityList.countCities());
-//    }
+
+    /**
+     * get number of cities in list
+     * check that there are no cities in list
+     * add a new city to the list
+     * check that there is 1 city in list
+     * delete city
+     * check that there are no cities in list
+     */
+    @Test
+    void testCountCities() {
+        list = MockCityList();
+        assertEquals(0, list.countCities());
+        City city = new City("Calgary", "Alberta");
+        list.add(city);
+        assertEquals(2, list.countCities());
+        list.delete(city);
+        assertEquals(1, list.countCities());
+    }
 }
