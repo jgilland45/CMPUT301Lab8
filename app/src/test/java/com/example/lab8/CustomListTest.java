@@ -89,9 +89,9 @@ public class CustomListTest {
         list = MockCityList();
         assertEquals(0, list.countCities());
         City city = new City("Calgary", "Alberta");
-        list.add(city);
-        assertEquals(2, list.countCities());
-        list.delete(city);
+        list.addCity(city);
         assertEquals(1, list.countCities());
+        list.delete(city);
+        assertEquals(0, list.countCities());
     }
 }
