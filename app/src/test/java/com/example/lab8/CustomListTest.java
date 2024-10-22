@@ -49,17 +49,18 @@ public class CustomListTest {
     void testHasCity() {
         list = MockCityList();
         City city = mockCity();
+        list.addCity(city);
         City city2 = new City("Calgary", "Alberta");
         assertTrue(list.hasCity(city));
         assertFalse(list.hasCity(city2));
     }
 //    @Test
 //    void testDeleteCity() {
-//        CityList cityList = mockCityList();
-//        cityList.delete(mockCity());
-//        assertFalse(cityList.hasCity(mockCity()));
+//        list = MockCityList();
+//        list.delete(mockCity());
+//        assertFalse(list.hasCity(mockCity()));
 //        assertThrows(IllegalArgumentException.class, () -> {
-//            cityList.delete(mockCity());
+//            list.delete(mockCity());
 //        });
 //    }
 //    @Test
